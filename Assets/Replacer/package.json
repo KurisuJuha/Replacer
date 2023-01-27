@@ -1,8 +1,5 @@
 {
     "name": "jp.juhakurisu.replacer",
     "version": "1.0.0",
-    "displayName": "Replacer",
-    "dependencies": {
-        "popoExtentions": "github.com/KurisuJuha/popoExtentions.git?path=Assets/popoExtentions"
-    }
+    "displayName": "Replacer"
 }
