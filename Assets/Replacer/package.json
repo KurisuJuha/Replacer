@@ -3,6 +3,6 @@
     "version": "1.0.0",
     "displayName": "Replacer",
     "dependencies": {
-        "jp.juhakurisu.popoExtentions": "https://github.com/KurisuJuha/popoExtentions.git?path=Assets/popoExtentions"
+        "jp.juhakurisu.popoExtentions": "git@github.com/KurisuJuha/popoExtentions.git?path=Assets/popoExtentions"
     }
 }
