@@ -1,7 +1,9 @@
 {
     "name": "Replacer",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "GUID:c272dca4282f1704f8c0e5c6a32a92c2"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
@@ -10,5 +12,5 @@
     "autoReferenced": true,
     "defineConstraints": [],
     "versionDefines": [],
-    "noEngineReferences": true
+    "noEngineReferences": false
 }

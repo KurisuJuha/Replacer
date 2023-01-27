@@ -216,6 +216,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "jp.juhakurisu.popoextentions": {
+      "version": "https://github.com/KurisuJuha/popoExtentions.git?path=Assets/popoExtentions",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "4e58de626fa58d674aec74c607e08db1189243fa"
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,
