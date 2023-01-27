@@ -1,9 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System;
+using Random = UnityEngine.Random;
 using JuhaKurisu.PopoTools.Extentions;
 
-namespace JuhaKurisu.PopoTools.Replace
+namespace JuhaKurisu.PopoTools.Replacer
 {
     public static class Array2DReplacer
     {
@@ -112,7 +113,7 @@ namespace JuhaKurisu.PopoTools.Replace
             if (transforms.Count <= 0) return false;
 
             // ランダムに選ぶ
-            int index = UnityEngine.Random.Range(0, transforms.Count);
+            int index = Random.Range(0, transforms.Count);
             var transform = transforms[index];
 
             // 置き換え
@@ -147,7 +148,7 @@ namespace JuhaKurisu.PopoTools.Replace
                     if (positions.Count == 0) break;
 
                     // ランダムに一つ選ぶ
-                    int index = UnityEngine.Random.Range(0, positions.Count);
+                    int index = Random.Range(0, positions.Count);
                     (int x, int y, int r) position = positions[index];
                     positions.RemoveAt(index);
 
