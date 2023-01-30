@@ -1,6 +1,9 @@
 # Replacer
 
-```url
-https://github.com/KurisuJuha/Replacer.git?path=Assets/Replacer
-https://github.com/KurisuJuha/popoExtentions.git?path=Assets/popoExtentions
+```json
+{
+    "Name" : "JuhaKurisu",
+    "URL" : "https://package.openupm.com",
+    "Scope" : "jp.juhakurisu"
+}
 ```
