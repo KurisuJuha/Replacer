@@ -19,9 +19,10 @@ namespace JuhaKurisu.PopoTools.Replacer
 
                 while (e.MoveNext())
                 {
-                    if (!e.Current) yield break;
                     yield return true;
                 }
+
+                if (!e.Current) yield break;
             }
         }
     }
