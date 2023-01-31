@@ -5,8 +5,8 @@ namespace JuhaKurisu.PopoTools.Replacer
 {
     public class RandomReplaceRule<T> : Rule<T>
     {
-        T[,] before;
-        T[,] after;
+        readonly T[,] before;
+        readonly T[,] after;
 
         public RandomReplaceRule(T[,] before, T[,] after)
         {
