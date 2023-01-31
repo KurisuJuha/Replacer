@@ -10,12 +10,10 @@ namespace JuhaKurisu
         public IEnumerator Generate(Color[,] colors)
         {
             colors.Fill(Color.black);
+            colors[colors.GetLength(0) / 2, colors.GetLength(1) / 2] = Color.red;
 
             Rule<Color> rule = new WhileRule<Color>(
-                new OneRule<Color>(
-                    new RandomReplaceRule<Color>(Color.black, Color.red),
-                    new RandomReplaceRule<Color>(Color.black, Color.blue)
-                )
+                new RandomReplaceRule<Color>(new Color[] { Color.red, Color.black, Color.black }, new Color[] { Color.white, Color.white, Color.red })
             );
 
             IEnumerator<bool> enumerator = rule.Step(colors);
