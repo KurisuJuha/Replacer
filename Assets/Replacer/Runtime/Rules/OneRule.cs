@@ -20,7 +20,7 @@ namespace JuhaKurisu.PopoTools.Replacer
 
             while (e.MoveNext())
             {
-                yield return true;
+                yield return e.Current;
             }
         }
     }

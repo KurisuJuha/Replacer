@@ -19,6 +19,7 @@ namespace JuhaKurisu
             IEnumerator<bool> enumerator = rule.Step(colors);
             while (enumerator.MoveNext())
             {
+                Debug.Log(enumerator.Current);
                 yield return null;
             }
         }
