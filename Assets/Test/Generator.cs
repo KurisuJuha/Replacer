@@ -12,8 +12,35 @@ namespace JuhaKurisu
             colors.Fill(Color.black);
             colors[colors.GetLength(0) / 2, colors.GetLength(1) / 2] = Color.red;
 
-            Rule<Color> rule = new WhileRule<Color>(
-                new RandomReplaceRule<Color>(new Color[] { Color.red, Color.black, Color.black }, new Color[] { Color.white, Color.white, Color.red })
+            Rule<Color> rule = new SequenceRule<Color>(
+                new WhileRule<Color>(
+                    new RandomReplaceRule<Color>(
+                        new Color[] {
+                            Color.red,
+                            Color.black,
+                            Color.black
+                        },
+                        new Color[] {
+                            Color.white,
+                            Color.white,
+                            Color.red
+                        }
+                    )
+                ),
+                new WhileRule<Color>(
+                    new RandomReplaceRule<Color>(
+                        new Color[] {
+                            Color.white,
+                            Color.white,
+                            Color.red
+                        },
+                        new Color[] {
+                            Color.red,
+                            Color.black,
+                            Color.black
+                        }
+                    )
+                )
             );
 
             IEnumerator<bool> enumerator = rule.Step(colors);
