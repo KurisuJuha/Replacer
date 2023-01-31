@@ -9,6 +9,17 @@ namespace JuhaKurisu.PopoTools.Replacer
     {
         public abstract IEnumerator<bool> Step(T[,] values);
 
+        public (int x, int y, int r)[] ScanAllDirections(T[,] values, T[,] before)
+        {
+            List<(int x, int y, int r)> ret = new List<(int x, int y, int r)>();
+
+            for (int r = 0; r < 4; r++)
+            {
+                ret.AddRange(values.ScanAll(before.Rotate(r)).Select(s => (s.x, s.y, r)));
+            }
+
+            return ret.ToArray();
+        }
 
         public (int x, int y)[] ScanAll(T[,] values, T[,] before)
         {
