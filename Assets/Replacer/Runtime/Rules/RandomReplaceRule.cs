@@ -1,3 +1,4 @@
+using UnityEngine;
 using System.Collections.Generic;
 using JuhaKurisu.PopoTools.Extentions;
 
@@ -29,7 +30,7 @@ namespace JuhaKurisu.PopoTools.Replacer
             this.after[0, 0] = after;
         }
 
-        public override IEnumerator<T[,]> Step(T[,] values)
+        public override IEnumerator<bool> Step(T[,] values)
         {
             var transforms = ScanAllDirections(values, before);
             if (transforms.Length == 0)
