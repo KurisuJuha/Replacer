@@ -38,7 +38,7 @@ namespace JuhaKurisu
 
             mainTexture.SetPixels(colors.ToArray());
             mainTexture.Apply();
-
+            renderer.gameObject.transform.localScale = new Vector3(100 / (float)mainTexture.width, 100 / (float)mainTexture.height, 1);
             renderer.sprite = Sprite.Create(mainTexture, new Rect(0, 0, mainTexture.width, mainTexture.height), Vector2.zero);
         }
     }
