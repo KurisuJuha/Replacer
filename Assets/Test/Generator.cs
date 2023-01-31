@@ -11,7 +11,7 @@ namespace JuhaKurisu
             Color[,] colors = new Color[width, height];
             colors.Fill(Color.black);
 
-            RandomReplaceRule<Color> rule = new RandomReplaceRule<Color>();
+            RandomReplaceRule<Color> rule = new RandomReplaceRule<Color>(Color.black, Color.white);
 
             IEnumerator<Color[,]> enumerator = rule.Step(colors);
             while (enumerator.MoveNext())
