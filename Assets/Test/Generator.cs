@@ -11,15 +11,16 @@ namespace JuhaKurisu
         {
             colors.Fill(Color.black);
 
-            Rule<Color> rule = new OneRule<Color>(
-                new RandomReplaceRule<Color>(Color.black, Color.red),
-                new RandomReplaceRule<Color>(Color.black, Color.blue)
+            Rule<Color> rule = new WhileRule<Color>(
+                new OneRule<Color>(
+                    new RandomReplaceRule<Color>(Color.black, Color.red),
+                    new RandomReplaceRule<Color>(Color.black, Color.blue)
+                )
             );
 
             IEnumerator<bool> enumerator = rule.Step(colors);
             while (enumerator.MoveNext())
             {
-                Debug.Log(enumerator.Current);
                 yield return null;
             }
         }
