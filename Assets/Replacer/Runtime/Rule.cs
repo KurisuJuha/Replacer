@@ -41,5 +41,20 @@ namespace JuhaKurisu.PopoTools.Replacer
 
             return true;
         }
+
+        public bool Replace(T[,] values, T[,] before, (int x, int y) position)
+        {
+            for (int x = 0; x < before.GetLength(0); x++)
+            {
+                for (int y = 0; y < before.GetLength(1); y++)
+                {
+                    if (!values.IsIndexWithInRange(position.x + x, position.y + y)) return false;
+
+                    values[position.x + x, position.y + y] = before[x, y];
+                }
+            }
+
+            return true;
+        }
     }
 }
