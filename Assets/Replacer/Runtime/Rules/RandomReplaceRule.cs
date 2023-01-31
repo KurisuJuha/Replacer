@@ -31,9 +31,21 @@ namespace JuhaKurisu.PopoTools.Replacer
 
         public override IEnumerator<T[,]> Step(T[,] values)
         {
+            var transforms = ScanAllDirections(values, before);
+            if (transforms.Length == 0)
+            {
+                yield return false;
+                yield break;
+            }
 
+            var transform = transforms[Random.Range(0, transforms.Length)];
+            if (!Replace(values, after.Rotate(transform.r), (transform.x, transform.y)))
+            {
+                yield return false;
+                yield break;
+            }
 
-            yield return values;
+            yield return true;
         }
     }
 }
