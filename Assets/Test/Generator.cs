@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using JuhaKurisu.PopoTools.Replacer;
@@ -6,20 +7,17 @@ namespace JuhaKurisu
 {
     public class Generator
     {
-        public Color[,] Generate(int width, int height)
+        public IEnumerator Generate(Color[,] colors)
         {
-            Color[,] colors = new Color[width, height];
             colors.Fill(Color.black);
 
             RandomReplaceRule<Color> rule = new RandomReplaceRule<Color>(Color.black, Color.white);
 
-            IEnumerator<Color[,]> enumerator = rule.Step(colors);
+            IEnumerator<bool> enumerator = rule.Step(colors);
             while (enumerator.MoveNext())
             {
-                colors = enumerator.Current;
+                yield return null;
             }
-
-            return colors;
         }
     }
 }
