@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using System.Collections.Generic;
 using JuhaKurisu.PopoTools.Extentions;
 
@@ -5,7 +7,8 @@ namespace JuhaKurisu.PopoTools.Replacer
 {
     public abstract class Rule<T>
     {
-        public abstract IEnumerator<T[,]> Step(T[,] values);
+        public abstract IEnumerator<bool> Step(T[,] values);
+
 
         public (int x, int y)[] ScanAll(T[,] values, T[,] before)
         {
